@@ -2,7 +2,7 @@
 #include "GameScene.h"
 
 const int WINDOW_WIDTH = 1200;
-const int WINDOW_HEIGHT = 900;
+const int WINDOW_HEIGHT = 800;
 
 const std::string WINDOW_TITLE = "Final Warzone";
 

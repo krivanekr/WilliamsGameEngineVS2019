@@ -1,6 +1,6 @@
 #include "Ship.h"
 
-const float  SPEED = 3.0f;
+const float  SPEED = 1.5f;
 
 Ship::Ship()
 {
@@ -19,7 +19,16 @@ void Ship::update(sf::Time& elapsed)
 		float x = pos.x;
 		float y = pos.y;
 
-		int mElapsed = elapsed.asMilliseconds();
+		int msElapsed = elapsed.asMilliseconds();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 20)	y -= SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 625)	y += SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 20)	x -= SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 815)	x += SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 30)	y -= SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 615)	y += SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 50)	x -= SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 805)	x += SPEED * msElapsed * 2;
+
+		sprite_.setPosition(sf::Vector2f(x, y));
 	}

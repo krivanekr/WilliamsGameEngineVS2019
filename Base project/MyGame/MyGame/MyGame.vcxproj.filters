@@ -39,6 +39,9 @@
     <ClInclude Include="Ship.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Laser.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -55,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Art\ship.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\laser.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
