@@ -18,6 +18,9 @@
     <ClCompile Include="Ship.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Laser.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
