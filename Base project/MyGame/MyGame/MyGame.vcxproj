@@ -88,8 +88,10 @@
     <ClCompile Include="Engine\Scene.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Laser.cpp" />
+    <ClCompile Include="MeteorSpawner.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="Meteor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h" />
@@ -99,6 +101,8 @@
     <ClInclude Include="Engine\Scene.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Laser.h" />
+    <ClInclude Include="Meteor.h" />
+    <ClInclude Include="MeteorSpawner.h" />
     <ClInclude Include="Ship.h" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Art\laser.png" />
+    <Image Include="..\..\..\Art\meteor.png" />
     <Image Include="..\..\..\Art\ship.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
