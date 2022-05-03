@@ -11,9 +11,11 @@ public:
 	// Functions overridden from GameObject:
 	void draw();
 	void update(sf::Time& elapsed);
+	sf::FloatRect getCollisionRect();
+	void handleCollision(GameObject& otherGameObject);
 private:
 	sf::Sprite sprite_;
-	float SPEED = 2 + rand() % (10);
+	float SPEED = 0.5 + rand() % (10);
 };
 
 typedef std::shared_ptr<Meteor> MeteorPtr;

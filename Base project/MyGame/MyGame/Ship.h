@@ -14,6 +14,8 @@ public:
 private:
 	sf::Sprite sprite_;
 	int fireTimer_ = 0;
+	int fireTimer2_ = 0;
+	int fireTimer3_ = 0;
 };
 
 typedef std::shared_ptr<Ship> ShipPtr;

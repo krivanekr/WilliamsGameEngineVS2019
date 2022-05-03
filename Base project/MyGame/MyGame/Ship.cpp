@@ -3,8 +3,6 @@
 #include <memory>
 #include "Laser.h"
 
-const float  SPEED = 1.5f;
-const int FIRE_DELAY = 100;
 
 Ship::Ship()
 {
@@ -19,6 +17,10 @@ void Ship::draw()
 
 void Ship::update(sf::Time& elapsed)
 	{
+
+	    const float SPEED = 1.5f;
+	    const int FIRE_DELAY = 50;
+	    sf::FloatRect bounds = sprite_.getGlobalBounds();
 		sf::Vector2f pos = sprite_.getPosition();
 		float x = pos.x;
 		float y = pos.y;
@@ -40,16 +42,83 @@ void Ship::update(sf::Time& elapsed)
 		{
 			fireTimer_ -= msElapsed;
 		}
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && fireTimer_ <= 0)
+		if (fireTimer2_ > 0)
 		{
-			fireTimer_ = FIRE_DELAY;
-			sf::FloatRect bounds = sprite_.getGlobalBounds();
+			fireTimer_ -= msElapsed;
+		}
+		if (fireTimer3_ > 0)
+		{
+			fireTimer_ -= msElapsed;
+		}
 
-			float laserX = x + bounds.width;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) && fireTimer_ <= 0)
+		{
+            // Bottom Gun
+
+			fireTimer_ = FIRE_DELAY;
+
+			float laserX = x - 90 + bounds.width;
+			float laserY = y + 70 + (bounds.height / 2.0f);
+
+			LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
+			GAME.getCurrentScene().addGameObject(laser);
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::O) && fireTimer2_ <= 0)
+		{
+			// Middle Gun 
+
+			fireTimer2_ = FIRE_DELAY;
+			
+			float laserX = x - 50 + bounds.width;
 			float laserY = y + (bounds.height / 2.0f);
 
 			LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
 			GAME.getCurrentScene().addGameObject(laser);
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::I) && fireTimer_ <= 0)
+		{
+			// Top Gun
+
+			fireTimer_ = FIRE_DELAY;
+
+			float laserX = x - 90 + bounds.width;
+			float laserY = y - 70 + (bounds.height / 2.0f);
+
+			LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
+			GAME.getCurrentScene().addGameObject(laser);
+		}
+		/*
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && fireTimer_ <= 0 && fireTimer2_ <= 0 && fireTimer3_ <= 0)
+		{
+
+			// Top Gun
+			fireTimer_ = FIRE_DELAY;
+
+			float laser1X = x + bounds.width;
+			float laser1Y = y + (bounds.height / 2.0f);
+
+			LaserPtr laser1 = std::make_shared<Laser>(sf::Vector2f(laser1X, laser1Y));
+			GAME.getCurrentScene().addGameObject(laser1);
+
+			// Middle Gun
+
+			fireTimer2_ = FIRE_DELAY;
+
+			float laser2X = x + bounds.width;
+			float laser2Y = y + (bounds.height / 2.0f);
+
+			LaserPtr laser2 = std::make_shared<Laser>(sf::Vector2f(laser2X, laser2Y));
+			GAME.getCurrentScene().addGameObject(laser2);
+
+			//Bottom Gun
+
+			fireTimer3_ = FIRE_DELAY;
+
+			float laser3X = x + bounds.width;
+			float laser3Y = y + (bounds.height / 2.0f);
+
+			LaserPtr laser3 = std::make_shared<Laser>(sf::Vector2f(laser3X, laser3Y));
+			GAME.getCurrentScene().addGameObject(laser3);
+		}
+		*/
 	}
