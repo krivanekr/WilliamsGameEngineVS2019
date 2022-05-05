@@ -27,6 +27,9 @@
     <ClCompile Include="MeteorSpawner.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -57,6 +60,9 @@
     <ClInclude Include="MeteorSpawner.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -79,6 +85,9 @@
       <Filter>Resources</Filter>
     </Image>
     <Image Include="..\..\..\Art\meteor.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion-spritesheet.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

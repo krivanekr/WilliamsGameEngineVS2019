@@ -11,7 +11,7 @@ void MeteorSpawner::update(sf::Time& elapsed)
 	timer_ -= msElapsed;
 
 	//if out timer has elapsed, reset it and spawn a meteor.
-	/*if (timer_ <= 0)
+	if (timer_ <= 0)
 	{
 		timer_ = SPAWN_DELAY;
 
@@ -28,5 +28,4 @@ void MeteorSpawner::update(sf::Time& elapsed)
 		MeteorPtr meteor = std::make_shared<Meteor>(sf::Vector2f(meteorX, meteorY));
 		GAME.getCurrentScene().addGameObject(meteor);
 	}
-	*/
 }

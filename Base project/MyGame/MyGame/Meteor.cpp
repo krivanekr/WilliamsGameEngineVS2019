@@ -1,4 +1,5 @@
 #include "Meteor.h"
+#include "Explosion.h"
 
 Meteor::Meteor(sf::Vector2f pos)
 {
@@ -39,6 +40,15 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 	{
 		otherGameObject.makeDead();
 	}
-
+	
 	makeDead();
+
+	sf::Vector2u size = GAME.getRenderWindow().getSize();
+
+	float meteorX = (float)(size.x + 100);
+
+	float meteorY = (float)(rand() % size.y);
+
+	ExplosionPtr explosion = std::make_shared<Explosion>(sf::Vector2f(meteorX, meteorY));
+	GAME.getCurrentScene().addGameObject(explosion);
 }
