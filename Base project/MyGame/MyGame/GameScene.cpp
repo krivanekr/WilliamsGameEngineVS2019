@@ -1,6 +1,8 @@
 #include "GameScene.h"
 #include "Ship.h"
 #include "MeteorSpawner.h"
+#include "Laser.h"
+#include "Explosion.h"
 
 GameScene::GameScene() 
 {
