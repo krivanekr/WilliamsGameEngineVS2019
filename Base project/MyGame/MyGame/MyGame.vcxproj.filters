@@ -14,7 +14,6 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="MyGame.cpp" />
-    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Ship.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -28,6 +27,12 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Explosion.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +52,6 @@
     <ClInclude Include="Engine\Scene.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h" />
     <ClInclude Include="Ship.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -61,6 +65,12 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Explosion.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
@@ -90,5 +100,10 @@
     <Image Include="..\..\..\Art\explosion-spritesheet.png">
       <Filter>Resources</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\Art\boom.wav">
+      <Filter>Resources</Filter>
+    </Media>
   </ItemGroup>
 </Project>
