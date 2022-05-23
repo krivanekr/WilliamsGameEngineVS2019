@@ -45,6 +45,7 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 	makeDead();
 
 
+
 	//ExplosionPtr explosion = std::make_shared<Explosion>());
 	//GAME.getCurrentScene().addGameObject(explosion);
 }
