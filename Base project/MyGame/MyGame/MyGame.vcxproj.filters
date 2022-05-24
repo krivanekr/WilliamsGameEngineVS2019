@@ -35,6 +35,9 @@
     <ClCompile Include="Score.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Lives.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -71,6 +74,9 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Score.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Lives.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>

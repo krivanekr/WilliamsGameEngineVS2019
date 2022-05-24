@@ -25,3 +25,13 @@ void GameScene::increaseScore()
 {
 	++score_;
 }
+
+int GameScene::getLives()
+{
+	return lives_;
+}
+
+void GameScene::decreaseLives()
+{
+	--score_;
+}
