@@ -21,7 +21,7 @@ void Lives::update(sf::Time& elapsed)
 	GameScene& scene = (GameScene&)GAME.getCurrentScene();
 
 	std::stringstream stream;
-	stream << "Score: " << scene.getScore();
+	stream << "Lives: " << scene.getLives();
 
 	text_.setString(stream.str());
 }

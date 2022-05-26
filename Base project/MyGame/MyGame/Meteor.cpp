@@ -49,11 +49,10 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 	if (otherGameObject.hasTag("ship"))
 	{
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
-
-		scene.decreaseLives();
+        scene.decreaseLives();
 		int lives;
 		lives =	scene.getLives();
-		if (lives = 0)
+		if (lives == 0)
 		{
 			otherGameObject.makeDead();
 			ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
