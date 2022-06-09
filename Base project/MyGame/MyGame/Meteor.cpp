@@ -46,7 +46,7 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 
 		scene.increaseScore();
 	}
-	if (otherGameObject.hasTag("ship"))
+	else if (otherGameObject.hasTag("ship"))
 	{
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
         scene.decreaseLives();

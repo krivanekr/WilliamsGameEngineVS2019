@@ -1,14 +1,15 @@
 #include "GameScene.h"
 
-#include "Ship.h"
+#include "monstre.h"
 #include "MeteorSpawner.h"
 #include "Score.h"
 #include "Lives.h"
+#include "GameOverScene.h"
 
 GameScene::GameScene() 
 {
-	ShipPtr ship = std::make_shared<Ship>();
-	addGameObject(ship);
+	MonstrePtr Monstre = std::make_shared<Monstre>();
+	addGameObject(Monstre);
 
 	MeteorSpawnerPtr meteorSpawner = std::make_shared<MeteorSpawner>();
 	addGameObject(meteorSpawner);
@@ -38,4 +39,10 @@ int GameScene::getLives()
 void GameScene::decreaseLives()
 {
 	--lives_;
+
+	if (lives_ == 0)
+	{
+		GameOverScenePtr gameOverScene = std::make_shared<GameOverScene>(score_);
+		GAME.setScene(gameOverScene);
+	}
 }

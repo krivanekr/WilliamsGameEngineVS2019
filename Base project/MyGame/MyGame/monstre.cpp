@@ -1,22 +1,22 @@
-#include "Ship.h"
+#include "monstre.h"
 
 #include <memory>
 #include "Laser.h"
 
 
-Ship::Ship()
+Monstre::Monstre()
 {
-	sprite_.setTexture(GAME.getTexture("Resources/ship.png"));
+	sprite_.setTexture(GAME.getTexture("Resources/monstre.png"));
 	sprite_.setPosition(sf::Vector2f(100, 100));
-	assignTag("ship");
+	assignTag("Monstre");
 }
 
-void Ship::draw()
+void Monstre::draw()
 {
 	GAME.getRenderWindow().draw(sprite_);
 }
 
-void Ship::update(sf::Time& elapsed)
+void Monstre::update(sf::Time& elapsed)
 	{
 
 	    const float SPEED = 1.5f;
@@ -122,7 +122,7 @@ void Ship::update(sf::Time& elapsed)
 		}
 	}
 
-	sf::FloatRect Ship::getCollisionRect()
+	sf::FloatRect Monstre::getCollisionRect()
 	{
 		return sprite_.getGlobalBounds();
 	}

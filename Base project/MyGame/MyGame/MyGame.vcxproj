@@ -87,13 +87,15 @@
     <ClCompile Include="Engine\GameObject.cpp" />
     <ClCompile Include="Engine\Scene.cpp" />
     <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="GameOverMessage.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Lives.cpp" />
     <ClCompile Include="MeteorSpawner.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Score.cpp" />
-    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="monstre.cpp" />
     <ClCompile Include="Meteor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +104,8 @@
     <ClInclude Include="Engine\GameEngine.h" />
     <ClInclude Include="Engine\GameObject.h" />
     <ClInclude Include="Engine\Scene.h" />
+    <ClInclude Include="GameOverMessage.h" />
+    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="Laser.h" />
@@ -109,16 +113,17 @@
     <ClInclude Include="Meteor.h" />
     <ClInclude Include="MeteorSpawner.h" />
     <ClInclude Include="Score.h" />
-    <ClInclude Include="Ship.h" />
+    <ClInclude Include="monstre.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\..\Pictures\monstre.png" />
     <Image Include="..\..\..\Art\explosion-spritesheet.png" />
     <Image Include="..\..\..\Art\laser.png" />
     <Image Include="..\..\..\Art\meteor.png" />
-    <Image Include="..\..\..\Art\ship.png" />
+    <Image Include="..\..\..\Art\notship.png" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\Art\boom.wav" />
