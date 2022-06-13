@@ -7,7 +7,7 @@
 Monstre::Monstre()
 {
 	sprite_.setTexture(GAME.getTexture("Resources/monstre.jfif"));
-	sprite_.setPosition(sf::Vector2f(100, 100));
+	sprite_.setPosition(sf::Vector2f(525, 650));
 	assignTag("Monstre");
 }
 
@@ -28,14 +28,14 @@ void Monstre::update(sf::Time& elapsed)
 
 		int msElapsed = elapsed.asMilliseconds();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 20)	y -= SPEED * msElapsed;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 625)	y += SPEED * msElapsed;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 20)	x -= SPEED * msElapsed;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 815)	x += SPEED * msElapsed;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 30)	y -= SPEED * msElapsed * 2;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 615)	y += SPEED * msElapsed * 2;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 50)	x -= SPEED * msElapsed * 2;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 805)	x += SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 0)	y -= SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 651)	y += SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 0)	x -= SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 1051)	x += SPEED * msElapsed;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 0)	y -= SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 651)	y += SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 0)	x -= SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 1051)	x += SPEED * msElapsed * 2;
 
 		sprite_.setPosition(sf::Vector2f(x, y));
 

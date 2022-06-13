@@ -20,13 +20,23 @@ void Meteor::update(sf::Time& elapsed)
 	int msElapsed = elapsed.asMilliseconds();
 	sf::Vector2f pos = sprite_.getPosition();
 
-	if (pos.x < sprite_.getGlobalBounds().width * -1)
+	if (pos.y > sprite_.getGlobalBounds().height * 2)
 	{
 		makeDead();
+		/*GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		scene.decreaseLives();
+		int lives;
+		lives = scene.getLives();
+		if (lives == 0)
+		{
+			otherGameObject.makeDead();
+			ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
+			GAME.getCurrentScene().addGameObject(explosion);
+		}*/
 	}
 	else
 	{
-		sprite_.setPosition(sf::Vector2f(pos.x - SPEED * msElapsed, pos.y));
+		sprite_.setPosition(sf::Vector2f(pos.x, SPEED * msElapsed - pos.y));
 	}
 }
 
@@ -48,16 +58,7 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 	}
 	else if (otherGameObject.hasTag("Monstre"))
 	{
-		GameScene& scene = (GameScene&)GAME.getCurrentScene();
-        scene.decreaseLives();
-		int lives;
-		lives =	scene.getLives();
-		if (lives == 0)
-		{
-			otherGameObject.makeDead();
-			ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
-			GAME.getCurrentScene().addGameObject(explosion);
-		}
+		
 	}
 	makeDead();
 }

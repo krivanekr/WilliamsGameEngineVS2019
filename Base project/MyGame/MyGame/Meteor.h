@@ -15,7 +15,7 @@ public:
 	void handleCollision(GameObject& otherGameObject);
 private:
 	sf::Sprite sprite_;
-	float SPEED = 0.5 + rand() % (10);
+	float SPEED = 0.5 + rand() % (100);
 };
 
 typedef std::shared_ptr<Meteor> MeteorPtr;
