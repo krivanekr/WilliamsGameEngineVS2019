@@ -119,11 +119,11 @@
     <None Include="Resources\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\Pictures\monstre.png" />
     <Image Include="..\..\..\Art\explosion-spritesheet.png" />
     <Image Include="..\..\..\Art\laser.png" />
     <Image Include="..\..\..\Art\meteor.png" />
     <Image Include="..\..\..\Art\notship.png" />
+    <Image Include="Resources\monstre.jfif" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\Art\boom.wav" />
