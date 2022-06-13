@@ -6,7 +6,7 @@
 
 Monstre::Monstre()
 {
-	sprite_.setTexture(GAME.getTexture("Resources/monstre.png"));
+	sprite_.setTexture(GAME.getTexture("Resources/monstre.jfif"));
 	sprite_.setPosition(sf::Vector2f(100, 100));
 	assignTag("Monstre");
 }

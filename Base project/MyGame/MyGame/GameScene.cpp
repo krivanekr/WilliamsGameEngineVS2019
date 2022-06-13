@@ -8,8 +8,8 @@
 
 GameScene::GameScene() 
 {
-	MonstrePtr Monstre = std::make_shared<Monstre>();
-	addGameObject(Monstre);
+	MonstrePtr monstre = std::make_shared<Monstre>();
+	addGameObject(monstre);
 
 	MeteorSpawnerPtr meteorSpawner = std::make_shared<MeteorSpawner>();
 	addGameObject(meteorSpawner);

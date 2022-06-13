@@ -118,7 +118,7 @@
     <Image Include="..\..\..\Art\explosion-spritesheet.png">
       <Filter>Resources</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Pictures\monstre.png">
+    <Image Include="Resources\monstre.jfif">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
