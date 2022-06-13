@@ -1,6 +1,9 @@
 #include "Meteor.h"
 #include "Explosion.h"
 #include "GameScene.h"
+#include <windows.h>
+
+const float SPEED = 0.25f;
 
 Meteor::Meteor(sf::Vector2f pos)
 {
@@ -20,23 +23,24 @@ void Meteor::update(sf::Time& elapsed)
 	int msElapsed = elapsed.asMilliseconds();
 	sf::Vector2f pos = sprite_.getPosition();
 
-	if (pos.y > sprite_.getGlobalBounds().height * 2)
+	if (pos.y > sprite_.getGlobalBounds().height * 17)
 	{
 		makeDead();
-		/*GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
 		scene.decreaseLives();
 		int lives;
 		lives = scene.getLives();
+		lives--;
 		if (lives == 0)
 		{
-			otherGameObject.makeDead();
+			makeDead();
 			ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
 			GAME.getCurrentScene().addGameObject(explosion);
-		}*/
+		}
 	}
 	else
 	{
-		sprite_.setPosition(sf::Vector2f(pos.x, SPEED * msElapsed - pos.y));
+		sprite_.setPosition(sf::Vector2f(pos.x, SPEED * msElapsed + pos.y));
 	}
 }
 
@@ -49,16 +53,16 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 {
 	if (otherGameObject.hasTag("laser"))
 	{
-		otherGameObject.makeDead();
-		ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
-	    GAME.getCurrentScene().addGameObject(explosion);
-		GameScene& scene = (GameScene&)GAME.getCurrentScene();
-
-		scene.increaseScore();
+		
 	}
 	else if (otherGameObject.hasTag("Monstre"))
 	{
 		
+		makeDead();
+		ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
+		GAME.getCurrentScene().addGameObject(explosion);
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+
+		scene.increaseScore();
 	}
-	makeDead();
 }

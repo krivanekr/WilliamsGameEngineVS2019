@@ -28,7 +28,7 @@ int GameScene::getScore()
 
 void GameScene::increaseScore()
 {
-	++score_;
+	score_ = score_ + 10;
 }
 
 int GameScene::getLives()

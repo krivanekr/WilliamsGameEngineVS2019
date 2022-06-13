@@ -124,5 +124,5 @@ void Monstre::update(sf::Time& elapsed)
 
 	sf::FloatRect Monstre::getCollisionRect()
 	{
-		return sprite_.getGlobalBounds();
+		return sf::FloatRect(sprite_.getPosition().x + 20, sprite_.getPosition().y + 130, 110, 50);
 	}
