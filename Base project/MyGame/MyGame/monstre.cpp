@@ -32,10 +32,10 @@ void Monstre::update(sf::Time& elapsed)
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 651)	y += SPEED * msElapsed;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 0)	x -= SPEED * msElapsed;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 1051)	x += SPEED * msElapsed;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 0)	y -= SPEED * msElapsed * 2;
+		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > 0)	y -= SPEED * msElapsed * 2;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 651)	y += SPEED * msElapsed * 2;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > 0)	x -= SPEED * msElapsed * 2;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 1051)	x += SPEED * msElapsed * 2;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 1051)	x += SPEED * msElapsed * 2;*/
 
 		sprite_.setPosition(sf::Vector2f(x, y));
 
@@ -51,7 +51,7 @@ void Monstre::update(sf::Time& elapsed)
 		{
 			fireTimer3_ -= msElapsed;
 		}
-
+		/*
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) && fireTimer_ <= 0)
 		{
             // Bottom Gun
@@ -120,9 +120,17 @@ void Monstre::update(sf::Time& elapsed)
 			LaserPtr laser3 = std::make_shared<Laser>(sf::Vector2f(laser3X, laser3Y));
 			GAME.getCurrentScene().addGameObject(laser3);
 		}
+	*/
 	}
 
 	sf::FloatRect Monstre::getCollisionRect()
 	{
 		return sf::FloatRect(sprite_.getPosition().x + 20, sprite_.getPosition().y + 130, 110, 50);
+	}
+
+	sf::Vector2f Monstre::getPosition(sf::Time& elapsed)
+	{
+		sf::FloatRect bounds = sprite_.getGlobalBounds();
+		sf::Vector2f pos = sprite_.getPosition();
+		return pos;
 	}

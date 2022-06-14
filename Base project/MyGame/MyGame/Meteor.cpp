@@ -1,6 +1,7 @@
 #include "Meteor.h"
 #include "Explosion.h"
 #include "GameScene.h"
+#include "Monstre.h"
 #include <windows.h>
 
 const float SPEED = 0.25f;
@@ -37,6 +38,26 @@ void Meteor::update(sf::Time& elapsed)
 			ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
 			GAME.getCurrentScene().addGameObject(explosion);
 		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		int myX;
+		int myY;
+		GameObject myobject;
+
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		myobject.p = scene.getGameObject("Monstre");
+
+
+
+
+
+
+
+
+
+		if (pos.x > )
+		sprite_.setPosition(sf::)
 	}
 	else
 	{

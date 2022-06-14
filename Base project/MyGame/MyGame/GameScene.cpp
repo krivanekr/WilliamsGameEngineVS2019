@@ -46,3 +46,16 @@ void GameScene::decreaseLives()
 		GAME.setScene(gameOverScene);
 	}
 }
+sf::Vector2f GameScene::getGameObject(std::string tag)
+{
+	int currentObject = 0;
+	for (auto& gameObject : gameObjects_)
+	{
+		if (gameObject->hasTag(tag))
+		{
+			sf::Vector2f pos = gameObject;
+			return pos;
+		}
+		currentObject++;
+	}
+}

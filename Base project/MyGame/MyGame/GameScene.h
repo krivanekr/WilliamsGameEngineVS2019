@@ -19,6 +19,8 @@ class GameScene : public Scene {
   // Increase the score
   void decreaseLives();
   
+  sf::Vector2f getGameObject(std::string tag);
+
 private:
 	int score_ = 0;
 
