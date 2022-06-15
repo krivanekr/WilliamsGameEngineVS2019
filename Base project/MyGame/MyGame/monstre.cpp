@@ -128,9 +128,9 @@ void Monstre::update(sf::Time& elapsed)
 		return sf::FloatRect(sprite_.getPosition().x + 20, sprite_.getPosition().y + 130, 110, 50);
 	}
 
-	sf::Vector2f Monstre::getPosition(sf::Time& elapsed)
+	/*sf::Vector2f Monstre::getPosition(sf::Time& elapsed)
 	{
 		sf::FloatRect bounds = sprite_.getGlobalBounds();
 		sf::Vector2f pos = sprite_.getPosition();
 		return pos;
-	}
+	}*/

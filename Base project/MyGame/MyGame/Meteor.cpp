@@ -41,6 +41,8 @@ void Meteor::update(sf::Time& elapsed)
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
+	}
+		/*
 		int myX;
 		int myY;
 		GameObject myobject;
@@ -58,7 +60,7 @@ void Meteor::update(sf::Time& elapsed)
 
 		if (pos.x > )
 		sprite_.setPosition(sf::)
-	}
+	}*/
 	else
 	{
 		sprite_.setPosition(sf::Vector2f(pos.x, SPEED * msElapsed + pos.y));
@@ -83,7 +85,7 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 		ExplosionPtr explosion = std::make_shared<Explosion>(sprite_.getPosition());
 		GAME.getCurrentScene().addGameObject(explosion);
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
-
+		
 		scene.increaseScore();
 	}
 }

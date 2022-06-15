@@ -45,7 +45,7 @@ void GameScene::decreaseLives()
 		GameOverScenePtr gameOverScene = std::make_shared<GameOverScene>(score_);
 		GAME.setScene(gameOverScene);
 	}
-}
+}/*
 sf::Vector2f GameScene::getGameObject(std::string tag)
 {
 	int currentObject = 0;
@@ -58,4 +58,4 @@ sf::Vector2f GameScene::getGameObject(std::string tag)
 		}
 		currentObject++;
 	}
-}
+}*/

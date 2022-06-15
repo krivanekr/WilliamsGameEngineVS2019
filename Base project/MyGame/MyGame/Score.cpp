@@ -21,7 +21,7 @@ void Score::update(sf::Time& elapsed)
 	GameScene& scene = (GameScene&)GAME.getCurrentScene();
 
 	std::stringstream stream;
-	stream << "Score: " << scene.getScore();
+	stream << "Happiness Points: " << scene.getScore();
 
 	text_.setString(stream.str());
 }

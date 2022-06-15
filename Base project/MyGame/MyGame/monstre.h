@@ -12,7 +12,7 @@ public:
 	void draw();
 	void update(sf::Time& elapsed);
 	sf::FloatRect getCollisionRect();
-	sf::Vector2f getPosition(sf::Time& elapsed);
+	//sf::Vector2f getPosition(sf::Time& elapsed);
 private:
 	sf::Sprite sprite_;
 	int fireTimer_ = 0;
